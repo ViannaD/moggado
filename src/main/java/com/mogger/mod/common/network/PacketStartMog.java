@@ -58,7 +58,7 @@ public class PacketStartMog {
                 MogDuelManager.startDuel(player, target);
 
                 // Freeze both
-                target.setNoAi(true);
+                if (target instanceof net.minecraft.world.entity.Mob mob) mob.setNoAi(true);
 
                 // Notify client to enter duel state
                 MoggerNetwork.sendToPlayer(player,
