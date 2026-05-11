@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+issueTrackerURL="https://github.com/yourname/mogger/issues"
+
+[[mods]]
+    modId="mogger"
+    version="1.0.0"
+    displayName="Mogger"
+    description='''
+        The ultimate aura clash system.
+        Press [G] near any mob to initiate a Mog Duel.
+        MOGGAR or get MOGGED. No in-between.
+    '''
+
+[[dependencies.mogger]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47.2.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.mogger]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"
