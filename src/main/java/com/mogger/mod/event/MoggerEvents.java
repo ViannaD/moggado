@@ -91,7 +91,7 @@ public class MoggerEvents {
         LivingEntity target = duel.target;
 
         // Un-freeze target AI
-        target.setNoAi(false);
+        if (target instanceof net.minecraft.world.entity.Mob mob) mob.setNoAi(false);
 
         // Calculate powers
         int playerLevel;
@@ -160,7 +160,7 @@ public class MoggerEvents {
 
     private void resolveDuelAborted(MogDuelManager.MogDuel duel, UUID challengerId) {
         duel.resolved = true;
-        duel.target.setNoAi(false);
+        if (duel.target instanceof net.minecraft.world.entity.Mob mob) mob.setNoAi(false);
 
         ServerPlayer challenger = duel.challenger;
         if (challenger.isAlive()) {
@@ -176,7 +176,7 @@ public class MoggerEvents {
             if (MogDuelManager.isInDuel(player.getUUID())) {
                 MogDuelManager.MogDuel duel = MogDuelManager.getDuel(player.getUUID());
                 if (duel != null) {
-                    duel.target.setNoAi(false);
+                    if (duel.target instanceof net.minecraft.world.entity.Mob mob) mob.setNoAi(false);
                 }
                 MogDuelManager.endDuel(player.getUUID());
             }
